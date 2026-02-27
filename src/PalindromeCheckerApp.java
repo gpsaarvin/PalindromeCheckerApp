@@ -1,30 +1,33 @@
-public class UseCase10PalindromeCheckerApp {
+// UC11: Object-Oriented Palindrome Service
 
-    public static boolean isPalindrome(String s) {
-        int start = 0;
-        int end = s.length() - 1;
+import java.util.Stack;
 
-        while (start < end) {
-            if (s.charAt(start) != s.charAt(end)) {
+class PalindromeChecker {
+    // Encapsulated method to check palindrome
+    public boolean checkPalindrome(String input) {
+        Stack<Character> stack = new Stack<>();
+        for (char ch : input.toCharArray()) {
+            stack.push(ch);
+        }
+
+        for (char ch : input.toCharArray()) {
+            if (ch != stack.pop()) {
                 return false;
             }
-            start++;
-            end--;
         }
         return true;
     }
+}
 
+public class UseCase11PalindromeCheckerApp {
     public static void main(String[] args) {
-        System.out.println("===== Palindrome Checker (UC10 - Case Insensitive & Space Ignored) =====");
+        System.out.println("===== Palindrome Checker (UC11 - OOP Service) =====");
 
-        String input = "A man a plan a canal Panama";
-        System.out.println("Original Input: " + input);
+        String input = "level";
+        System.out.println("Input String: " + input);
 
-        // Normalize string: remove spaces and convert to lower case
-        String normalized = input.replaceAll("\\s+", "").toLowerCase();
-        System.out.println("Normalized Input: " + normalized);
-
-        boolean result = isPalindrome(normalized);
+        PalindromeChecker checker = new PalindromeChecker();
+        boolean result = checker.checkPalindrome(input);
 
         if (result) {
             System.out.println("Result: The given string is a Palindrome.");
