@@ -1,23 +1,30 @@
-public class UseCase9PalindromeCheckerApp {
+public class UseCase10PalindromeCheckerApp {
 
-    // Recursive method to check palindrome
-    public static boolean isPalindrome(String s, int start, int end) {
-        if (start >= end) {
-            return true; // Base condition: crossed pointers
+    public static boolean isPalindrome(String s) {
+        int start = 0;
+        int end = s.length() - 1;
+
+        while (start < end) {
+            if (s.charAt(start) != s.charAt(end)) {
+                return false;
+            }
+            start++;
+            end--;
         }
-        if (s.charAt(start) != s.charAt(end)) {
-            return false; // Mismatch found
-        }
-        return isPalindrome(s, start + 1, end - 1); // Recursive call
+        return true;
     }
 
     public static void main(String[] args) {
-        System.out.println("===== Palindrome Checker (UC9 - Recursion) =====");
+        System.out.println("===== Palindrome Checker (UC10 - Case Insensitive & Space Ignored) =====");
 
-        String input = "madam";
-        System.out.println("Input String: " + input);
+        String input = "A man a plan a canal Panama";
+        System.out.println("Original Input: " + input);
 
-        boolean result = isPalindrome(input, 0, input.length() - 1);
+        // Normalize string: remove spaces and convert to lower case
+        String normalized = input.replaceAll("\\s+", "").toLowerCase();
+        System.out.println("Normalized Input: " + normalized);
+
+        boolean result = isPalindrome(normalized);
 
         if (result) {
             System.out.println("Result: The given string is a Palindrome.");
