@@ -1,36 +1,34 @@
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
-// UC6: Queue + Stack Based Palindrome Check
+// UC7: Deque-Based Optimized Palindrome Checker
 
-public class UseCase6PalindromeCheckerApp {
+public class UseCase7PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
-        System.out.println("===== Palindrome Checker (UC6 - Queue & Stack) =====");
+        System.out.println("===== Palindrome Checker (UC7 - Deque) =====");
 
         // Hardcoded string
-        String input = "level";
+        String input = "civic";
         System.out.println("Input String: " + input);
 
-        // Initialize queue and stack
-        Queue<Character> queue = new LinkedList<>();
-        Stack<Character> stack = new Stack<>();
+        // Initialize deque
+        Deque<Character> deque = new ArrayDeque<>();
 
-        // Enqueue and push characters
+        // Add characters to deque
         for (char ch : input.toCharArray()) {
-            queue.offer(ch);  // enqueue
-            stack.push(ch);   // push
+            deque.addLast(ch);
         }
 
-        // Compare dequeue and pop
+        // Compare front and rear characters
         boolean isPalindrome = true;
-        while (!queue.isEmpty() && !stack.isEmpty()) {
-            char fromQueue = queue.poll();   // dequeue
-            char fromStack = stack.pop();    // pop
 
-            if (fromQueue != fromStack) {
+        while (deque.size() > 1) {
+            char front = deque.removeFirst();
+            char rear = deque.removeLast();
+
+            if (front != rear) {
                 isPalindrome = false;
                 break;
             }
