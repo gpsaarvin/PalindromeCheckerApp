@@ -4,7 +4,7 @@ import java.util.Stack;
 
 // UC6: Queue + Stack Based Palindrome Check
 
-public class UseCase6PalindromeCheckerApp {
+public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
