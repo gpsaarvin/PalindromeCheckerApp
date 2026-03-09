@@ -1,6 +1,6 @@
 import java.util.Stack;
 
-public class UseCase5PalindromeCheckerApp {
+public class PalindromeCheckerApp {
     public static void main(String[] args) {
         System.out.println("===== Palindrome Checker (UC5 - Stack) =====");
 
