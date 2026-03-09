@@ -1,6 +1,6 @@
 // UC2: Hardcoded Palindrome Check
 
-public class UseCase2PalindromeCheckerApp {
+public class PalindromeCheckerApp {
 
     // Main Method - Entry Point
     public static void main(String[] args) {
