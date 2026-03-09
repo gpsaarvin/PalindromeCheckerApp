@@ -3,7 +3,7 @@ import java.util.Deque;
 
 // UC7: Deque-Based Optimized Palindrome Checker
 
-public class UseCase7PalindromeCheckerApp {
+public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
