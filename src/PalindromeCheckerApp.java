@@ -1,6 +1,6 @@
 // UC4: Character Array Based Palindrome Check
 
-public class UseCase4PalindromeCheckerApp {
+public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
